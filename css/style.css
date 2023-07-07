@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Ubuntu:ital@1&display=swap');
+
+*{
+    font-family: "Lato" , sans-serif;
+    font-family: "Ubuntu" , sans-serif;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(100, 149, 247, 0.774);
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    background-color: rgba(100, 149, 247, 0.774);
+    width: 100%;
+    justify-content: space-between;
+}
+
+header nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+header nav ul li {
+    margin-left: 10px;
+}
+
+.logotipo{
+    display: flex;
+    width: 100px;
+    height: 100px;
+}
+
+
+.caja {
+    background-color: lightgray;
+    color: black;
+    /* width: 300px; */
+    border: 2px groove rgba(100, 149, 247);
+    border-radius: 10px;
+}
+
+/* MAIN */
+
+main {
+    background-color: bisque;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #4c4747;
+}
+
+
+.copy {
+    color: rgba(100, 149, 247);
+}
+
+.redes {
+    color: rgba(100, 149, 247);
+}
+
+.info {
+    color: rgba(100, 149, 247);
+}
+
+
+
+
+/* NAVBAR*/
+
+.logoRedes{
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+/* Centrado */
+
+.centerBar{
+    align-items: center;
+    justify-content: center;
+}
+
+.flexEnd{
+    justify-content: flex-end;
+    align-items: center;
+}
+
