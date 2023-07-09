@@ -24,7 +24,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse centerBar" id="navbarSupportedContent">
-            <ul class=" centerBar">
+            <ul class="centerBar">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
               </li>
@@ -52,38 +52,65 @@
       <div>
         <h3>Servicio de reparación y mantenimiento de bombas</h3>
       </div>
-      <section>
+      <div>
         <h4>!SRM TE OFRECE!</h4>
-        <div>
-          <div class="caja">
-            <p>Mantenimiento preventivo y predictivo</p>
+      </div>
+      <section class="container">
+        <div class="row">
+          <div class="caja col-4">
+            <p class="text">Mantenimiento preventivo y predictivo</p>
           </div>
-          <div class="caja">
-            <p>Relevamiento de parámetros electricos /programacion /estanqueidad</p>
+          <div class="caja col-4">
+            <p class="text">Relevamiento de parámetros electricos /programacion /estanqueidad</p>
           </div>
-          <div class="caja">
-            <p>Trabajamos con variedad de equipos</p>
+          <div class="caja col-4">
+            <p class="text">Trabajamos con variedad de equipos</p>
           </div>
         </div>
       </section>
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./img/tableroClose.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./img/tableroOpen.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./img/tester.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </main>
     <footer id="footer">
-        <div>
-            <a class="subir" href="#header">ir a inicio</a>
-        </div>
-        <nav class="redes">
+      <div class="container-fluid">
+        <div class="row">
+          <nav class="redes col-4">
             <a href="https://www.google.com" target="_blank">ir a google</a>
             <a href="https://www.instagram.com" target="_blank">instagram</a>
             <a href="https://www.facebook.com" target="_blank">facebook</a>
-        </nav>
-        <section class="info">
+            <div>
+              <a class="subir" href="#header">ir a inicio</a>
+            </div>
+          </nav>
+          <section class="info col-4">
             <p>terminos y condiciones</p>
             <p>ayuda</p>
             <p>accesibilidad</p>
-        </section>
-        <div class="copy">
+          </section>
+          <div class="copy col-4">
             <p>Copyright © 2000-2023 S.R.M</p>
+          </div>
         </div>
+      </div>
     </footer>
 </body>
 </html>
