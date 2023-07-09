@@ -5,6 +5,8 @@
     font-family: "Ubuntu" , sans-serif;
 }
 
+/* index.html */
+
 /* HEADER */
 
 header {
@@ -50,6 +52,81 @@ header nav ul li {
 main {
     background-color: bisque;
 }
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.caja {
+    height: 100px;
+    background-color: gainsboro;
+    text-align: center;
+}
+
+/* MAIN CONTACTO */
+
+form {
+    display: grid;
+    grid-template-areas: 
+    "form mensaje"
+    "boton boton"
+    ;
+}
+
+.inputs {
+    grid-area: form;
+}
+
+.mensaje {
+    grid-area: mensaje;
+    display: flex;
+    flex-direction: column;
+}
+
+.boton {
+    grid-area: boton;
+    justify-self: end;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+    "section section"
+    "
+    ;
+}
+
+/* DIV MAPS */
+
+.contenedorMaps {
+    display: flex;
+    justify-content: center;
+}
+
+iframe {
+    width: 800px; 
+    height: 400px;
+    justify-content: center;
+}
+
+
+
+/* MAIN CLIENTES */
+
+.art {
+    width: 500px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.uni {
+    width: 500px;
+    padding: 20px;
+    margin: 20px;
+}
+
 
 /* FOOTER */
 
