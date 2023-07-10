@@ -64,13 +64,77 @@ div h4 {
     border-radius: 10px;
 }
 
+/* MAIN SERVICOS  */
 
+div h2 {
+    display: flex;
+    justify-content: center;
+}
 
+.incendio {
+    display: flex;
+    flex-direction: column;
+}
 
+div h5 {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
 
+div p {
+    display: flex;
+    justify-content: center;
+}
 
+.contenedorVideo{
+    display: flex;
+    justify-content: center;
+}
+
+iframe {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* MAIN QUIENES SOMOS */
+
+.somos {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedorImgSomos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.big {
+    width: 400px;
+    border: 10px groove rgba(100, 149, 247);
+    border-radius: 20px;
+}
+
+.medium {
+    width: 400px;
+    border: 10px groove rgba(100, 149, 247);
+    border-radius: 20px;
+}
+
+.small {
+    width: 400px;
+    border: 10px groove rgba(100, 149, 247);
+    border-radius: 20px;
+}
 
 /* MAIN CONTACTO */
+
+.contact {
+    display: flex;
+    flex-direction: row;
+}
 
 form {
     display: grid;
@@ -88,12 +152,11 @@ form {
     grid-area: mensaje;
     display: flex;
     flex-direction: column;
-    justify-self: start;
 }
 
 .boton {
     grid-area: boton;
-    justify-self: start;
+    justify-self: end;
 }
 
 
@@ -111,17 +174,20 @@ iframe {
 }
 
 
-
 /* MAIN CLIENTES */
 
 .art {
-    width: 500px;
+    display: flex;
+    justify-content: center;
+    width: 600px;
     padding: 20px;
     margin: 20px;
 }
 
 .uni {
-    width: 500px;
+    display: flex;
+    justify-content: center;
+    width: 600px;
     padding: 20px;
     margin: 20px;
 }
