@@ -132,8 +132,9 @@ iframe {
 /* MAIN CONTACTO */
 
 .contact {
-    display: grid;
+    display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 
 
@@ -163,19 +164,30 @@ form {
 
 
 .contact2 {
-    display: grid;
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     background-color: white;
+}
+
+.contenedorList {
+    display: flex;
+    align-self: center;
 }
 
 /* MEDIA QUERIES  */
 
 @media (max-width:768px){
 
-    .contact2 {
+    .contact {
     flex-direction: column;
     justify-content: center;
+    }}
+
+    @media (max-width:768px){
+
+    .iframe {
+    width: 100%;
     }}
 
 
