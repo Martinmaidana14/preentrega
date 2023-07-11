@@ -134,10 +134,12 @@ iframe {
 .contact {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 
 form {
     display: grid;
+    justify-content: center;
     grid-template-areas: 
     "form mensaje"
     "boton boton"
@@ -159,6 +161,29 @@ form {
     justify-self: end;
 }
 
+
+.contact2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: white;
+}
+
+.direccion {
+    background-color: bisque;
+}
+
+.telefono {
+    background-color: bisque;
+}
+
+.email {
+    background-color: bisque;
+}
+
+.sitioweb {
+    background-color: bisque;
+}
 
 /* DIV MAPS */
 
