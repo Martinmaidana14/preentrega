@@ -132,10 +132,10 @@ iframe {
 /* MAIN CONTACTO */
 
 .contact {
-    display: flex;
+    display: grid;
     flex-direction: row;
-    justify-content: space-around;
 }
+
 
 form {
     display: grid;
@@ -163,11 +163,21 @@ form {
 
 
 .contact2 {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    flex-direction: row;
     justify-content: space-evenly;
     background-color: white;
 }
+
+/* MEDIA QUERIES  */
+
+@media (max-width:768px){
+
+    .contact2 {
+    flex-direction: column;
+    justify-content: center;
+    }}
+
 
 .direccion {
     background-color: bisque;
