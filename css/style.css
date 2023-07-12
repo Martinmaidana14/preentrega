@@ -110,16 +110,18 @@ div p {
 
 
 .imgtexto {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    background-image: url(./../img/chapaFondo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .textosomos {
     color: black;
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    right: 40px;
-    bottom: 10px;
+    width: 80%;
 }
 
 .somos {
