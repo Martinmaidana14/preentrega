@@ -87,7 +87,12 @@ div p {
 }
 
 .incendio {
-    width: 50%;
+    width: 80%;
+}
+
+.contenedorhydro {
+    display: flex;
+    justify-content: center;
 }
 
 .contenedorVideo{
@@ -97,6 +102,19 @@ div p {
 }
 
 /* MAIN QUIENES SOMOS */
+
+
+.imgtexto {
+    position: relative;
+}
+
+.textosomos {
+    position: absolute;
+    top: 100px;
+    left: 40px;
+    right: 40px;
+    bottom: 10px;
+}
 
 .somos {
     display: flex;
