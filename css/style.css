@@ -45,7 +45,8 @@ main{
     display: flex;
     flex-direction: column; 
     align-items:center; 
-
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 div h3 {
@@ -95,7 +96,11 @@ div p {
     justify-content: center;
 }
 
-.contenedorVideo{
+.video1 {
+    width: 80%;
+}
+
+.contenedorVideo {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -109,8 +114,9 @@ div p {
 }
 
 .textosomos {
+    color: black;
     position: absolute;
-    top: 100px;
+    top: 40px;
     left: 40px;
     right: 40px;
     bottom: 10px;
@@ -125,6 +131,7 @@ div p {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .big {
@@ -230,9 +237,8 @@ form {
 }
 
 iframe {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width: 100%;
+    height: 400px;
 }
 
 
