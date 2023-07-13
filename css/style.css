@@ -117,11 +117,14 @@ div p {
     background-image: url(./../img/chapaFondo.png);
     background-repeat: no-repeat;
     background-size: cover;
+    margin-bottom: 20px;
 }
 
 .textosomos {
     color: black;
-    width: 80%;
+    width: 90%;
+    padding: 40px;
+    margin: 0;
 }
 
 .somos {
@@ -214,6 +217,13 @@ form {
     width: 100%;
     }}
 
+@media (max-width:768px){
+
+    .imgclientes {
+    flex-direction: column;
+    justify-content: center;
+    }}
+
 
 .direccion {
     background-color: bisque;
@@ -246,19 +256,14 @@ iframe {
 
 /* MAIN CLIENTES */
 
-.art {
+
+.imgclientes {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    width: 600px;
-    padding: 20px;
-    margin: 20px;
+    flex-wrap: wrap;
 }
 
-.uni {
-    display: flex;
-    justify-content: center;
-    width: 600px;
-}
 
 
 /* FOOTER */
