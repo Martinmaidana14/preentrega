@@ -38,7 +38,7 @@ header nav ul li {
     height: 100px;
 }
 
-/* MAIN */
+/* MAIN Index */
 
 main{
     background-color: bisque;
@@ -49,14 +49,9 @@ main{
     padding-top: 20px;
 }
 
-div h3 {
-    text-align: center;
-}
-
 div h4 {
     text-align: center;
 }
-
 
 .caja {
     height: 100px;
@@ -118,6 +113,7 @@ div p {
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: 20px;
+    text-shadow: white 1px 0 5px;
 }
 
 .textosomos {
@@ -158,6 +154,11 @@ div p {
 }
 
 /* MAIN CONTACTO */
+
+.contenedorcontacto {
+    display: flex;
+    justify-content: center;
+}
 
 .contact {
     display: flex;
@@ -201,6 +202,14 @@ form {
     display: flex;
     align-self: center;
 }
+
+
+@media (max-width:768px){
+
+    .contenedorcontacto  {
+    display: flex;
+    align-self: center;
+    }}
 
 /* MEDIA QUERIES  */
 
