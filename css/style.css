@@ -168,16 +168,38 @@ div p {
 
 
 form {
-    display: grid;
-    justify-content: center;
-    grid-template-areas: 
-    "form mensaje"
+    width: 50%;
+}
+
+.inputs {
+    grid-template-columns: repeat(2, 1fr);
+    grid-area: 
+    "h1 h1"
+    "nombre correo"
+    "tel contraseña"
+    "mensaje mensaje"
     "boton boton"
     ;
 }
 
-.inputs {
-    grid-area: form;
+h1 {
+    grid-area: h1;
+}
+
+.nombr {
+    grid-area: nombre;
+}
+
+.corre {
+    grid-area: correo;
+}
+
+.telefon {
+    grid-area: tel;
+}
+
+.contraseni {
+    grid-area: contrasenia;
 }
 
 .mensaje {
