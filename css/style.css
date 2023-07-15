@@ -172,18 +172,18 @@ form {
 }
 
 .inputs {
-    grid-template-columns: repeat(2, 1fr);
-    grid-area: 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
     "h1 h1"
     "nombre correo"
-    "tel contraseña"
+    "tel contrasenia"
     "mensaje mensaje"
-    "boton boton"
-    ;
+    "boton boton";
 }
 
-h1 {
-    grid-area: h1;
+.contenedorH1{
+    grid-area: h1;
 }
 
 .nombr {
@@ -198,7 +198,7 @@ h1 {
     grid-area: tel;
 }
 
-.contraseni {
+.contrasenia {
     grid-area: contrasenia;
 }
 
