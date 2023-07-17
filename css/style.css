@@ -229,9 +229,18 @@ form {
 @media (max-width:768px){
 
     form {
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
     justify-content: center;
     width: 50%;
+    grid-area: 
+    "h1"
+    "nombre"
+    "correo"
+    "tel"
+    "contrasenia"
+    "mensaje"
+    "boton"
+    ;
     }}
 
 
