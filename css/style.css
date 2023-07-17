@@ -231,9 +231,9 @@ form {
 
     .inputs {
     grid-template-columns: 1fr;
-    justify-content: center;
+    justify-items: center;
     width: 50%;
-    grid-area: 
+    grid-template-areas: 
     "h1"
     "nombre"
     "correo"
