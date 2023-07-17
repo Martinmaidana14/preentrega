@@ -183,7 +183,8 @@ form {
 }
 
 .contenedorH1{
-    grid-area: h1;
+    grid-area: h1;
+    justify-self: center;
 }
 
 .nombr {
@@ -198,7 +199,7 @@ form {
     grid-area: tel;
 }
 
-.contrasenia {
+.contraseni {
     grid-area: contrasenia;
 }
 
@@ -225,6 +226,14 @@ form {
     align-self: center;
 }
 
+@media (max-width:768px){
+
+    form {
+    grid-template-columns: auto;
+    justify-content: center;
+    width: 50%;
+    }}
+
 
 @media (max-width:768px){
 
@@ -241,6 +250,7 @@ form {
     flex-direction: column;
     justify-content: center;
     }}
+
 
 
 .direccion {
