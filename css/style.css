@@ -226,9 +226,10 @@ form {
     align-self: center;
 }
 
+
 @media (max-width:768px){
 
-    form {
+    .inputs {
     grid-template-columns: 1fr;
     justify-content: center;
     width: 50%;
