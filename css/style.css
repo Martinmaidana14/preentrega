@@ -301,7 +301,35 @@ iframe {
 /* MAIN CLIENTES */
 
 
+.card {
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 20px;
+    text-shadow: black 4px 0 20px;
+    margin: 20px;
+}
 
+
+/* CARD BOOTSTRAP */
+
+.card-title2 {
+    background-color: white;
+    color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 20px;
+    text-shadow: white 4px 0 10px;
+    margin: 20px;
+}
+
+.card-text2 {
+    color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 20px;
+    text-shadow: white 4px 0 4px;
+    margin: 20px;
+}
 
 
 /* FOOTER */
