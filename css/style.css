@@ -231,8 +231,6 @@ form{
 
     .inputs {
     grid-template-columns: 1fr;
-    justify-items: center;
-    width: 50%;
     grid-template-areas: 
     "h1"
     "nombre"
@@ -303,31 +301,7 @@ iframe {
 /* MAIN CLIENTES */
 
 
-.imgclientes {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-}
 
-.art {
-    width: 100%;
-}
-
-.uni {
-    width: 100%;
-}
-
-/* MEDIA QUERIE */
-
-@media (max-width:768px){
-
-    .imgclientes {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    }}
 
 
 /* FOOTER */
