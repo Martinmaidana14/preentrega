@@ -227,40 +227,6 @@ form{
 }
 
 
-@media (max-width:768px){
-
-    .inputs {
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-    "h1"
-    "nombre"
-    "correo"
-    "tel"
-    "contrasenia"
-    "mensaje"
-    "boton"
-    ;
-    }}
-
-
-@media (max-width:768px){
-
-    .contenedorcontacto  {
-    display: flex;
-    align-self: center;
-    }}
-
-/* MEDIA QUERIES  */
-
-@media (max-width:768px){
-
-    .contact {
-    flex-direction: column;
-    justify-content: center;
-    }}
-
-
-
 .direccion {
     background-color: bisque;
 }
@@ -289,14 +255,6 @@ iframe {
     height: 400px;
 }
 
-/* MEDIA QUERIE */
-
-@media (max-width:768px){
-
-    iframe {
-    width: 100%;
-    }}
-
 
 /* MAIN CLIENTES */
 
@@ -311,12 +269,6 @@ iframe {
 
 
 /* CARD BOOTSTRAP */
-
-@media (max-width:768px){
-
-    .card-img {
-    height: 400px;
-    }}
 
 .card-img-overlay {
     position: absolute;
@@ -407,7 +359,7 @@ footer {
 /* Centrado */
 
 .centerBar{
-    align-items: center;
+    align-items: end;
     justify-content: center;
 }
 
@@ -416,3 +368,62 @@ footer {
     align-items: center;
 }
 
+
+/* MEDIA QUERIES  */
+
+
+/* HEADER INDEX */
+
+@media (max-width:991px){
+
+    .centerBar {
+    flex-direction: column;
+    }}
+
+/* MAIN CONTACTO */
+
+@media (max-width:768px){
+
+    .inputs {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "h1"
+    "nombre"
+    "correo"
+    "tel"
+    "contrasenia"
+    "mensaje"
+    "boton"
+    ;
+    }}
+
+
+@media (max-width:768px){
+
+    .contenedorcontacto  {
+    display: flex;
+    align-self: center;
+    }}
+
+
+@media (max-width:768px){
+
+    .contact {
+    flex-direction: column;
+    justify-content: center;
+    }}
+
+
+@media (max-width:768px){
+
+    iframe {
+    width: 100%;
+    }}
+
+/* CARD BOOTSTRAP */
+
+@media (max-width:768px){
+
+    .card-img {
+    height: 400px;
+    }}
