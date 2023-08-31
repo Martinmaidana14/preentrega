@@ -7,6 +7,14 @@ let nombre = prompt("ingrese su nombre");
 let apellido = prompt("ingrese su apellido"); 
 let anio_nac = prompt("ingrese su año de nacimiento"); 
 
+
+
+function nombreCompleto() {
+    let nombre = prompt("ingrese su nombre"); 
+    let apellido = prompt("ingrese su apellido"); 
+    let anio_nac = prompt("ingrese su año de nacimiento"); 
+
+    
 let edad = ANIO_ACTUAL - anio_nac ;
 
 if ( nombre != "" && apellido != "" && anio_nac != ""  && !isNaN(edad) ){
@@ -31,6 +39,12 @@ if ( nombre != "" && apellido != "" && anio_nac != ""  && !isNaN(edad) ){
 
     alert ("Ingresa de forma correcta todos los datos");
 }
+}
+
+
+
+
+
 
 //datos de usuario1
 let id_usuario = 1;
