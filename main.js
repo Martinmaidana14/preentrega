@@ -14,9 +14,9 @@ function nombreCompleto() {
 	if (nombre != "" && apellido != "" && anio_nac != "" && !isNaN(edad)) {
 		//armo el mensaje al usuario
 		let mensaje = "Confirmas que tus datos son correctos : \n";
-		mensaje = mensaje + "-nombre " + nombre + "\n";
-		mensaje = mensaje + "-apellido " + apellido + "\n";
-		mensaje = mensaje + "-edad " + edad + "\n";
+		mensaje = mensaje + "-nombre: " + nombre + "\n";
+		mensaje = mensaje + "-apellido: " + apellido + "\n";
+		mensaje = mensaje + "-edad: " + edad + "\n";
 		mensaje += "?";
 
 		let respuesta = confirm(mensaje);
