@@ -28,9 +28,11 @@ mostrarProductos(productos);
 const carrito = [];
 
 function agregarAlCarrito(id){
+	//console.log(id)
 
 	let prodEncontrado = productos.find( prod => prod.id === parseInt(id)); //para encontrar un producto, recorriendo array 
 	//console.log(prodEncontrado) me devuelve el producto que clickeo y asi poder encontrarlos 
+	
 	carrito.push(prodEncontrado);
 	console.log(carrito);
 }
