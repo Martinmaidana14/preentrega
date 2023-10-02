@@ -15,9 +15,9 @@ const mostrarProductos = (data) => {
 								`;
 		contenedorProductos.appendChild(cardProducto);
 	})
-	const btnComprar = document.querySelectorAll('.btn-compra');
+	const btnComprar = document.querySelectorAll('.btn-compra'); //Nodelist[]
 	btnComprar.forEach(el => {
-		el.addEventListener('click', (e) =>{
+		el.addEventListener('click', (e) =>{ //Agregar Evento
 			agregarAlCarrito(e.target.id)
 		});
 	});
@@ -28,7 +28,11 @@ mostrarProductos(productos);
 const carrito = [];
 
 function agregarAlCarrito(id){
-	
+
+	let prodEncontrado = productos.find( prod => prod.id === parseInt(id)); //para encontrar un producto, recorriendo array 
+	//console.log(prodEncontrado) me devuelve el producto que clickeo y asi poder encontrarlos 
+	carrito.push(prodEncontrado);
+	console.log(carrito);
 }
 
 

@@ -1,7 +1,7 @@
 const productos = [
 	{
 		id: "1",
-		img: "https://dummyimage.com/300x150/f2f2f2/aaa",
+		img: "./img/motoE13.jpg",
 		nombre: "Moto E13",
 		marca: "Motorola",
 		precio: 65,
@@ -9,6 +9,7 @@ const productos = [
 	},
 	{
 		id: "2",
+		img: "./img/motoG32.jpg",
 		nombre: "Moto G32",
 		marca: "Motorola",
 		precio: 130,
@@ -16,6 +17,7 @@ const productos = [
 	},
 	{
 		id: "3",
+		img: "./img/motoG72.jpg",
 		nombre: "Moto G72",
 		marca: "Motorola",
 		precio: 202,
