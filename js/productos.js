@@ -1,6 +1,7 @@
 const productos = [
 	{
 		id: "1",
+		img: "https://dummyimage.com/300x150/f2f2f2/aaa",
 		nombre: "Moto E13",
 		marca: "Motorola",
 		precio: 65,

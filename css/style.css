@@ -38,3 +38,11 @@ footer {
 footer p {
 	text-align: center;
 }
+
+img {
+	background-color: gray;
+}
+
+contenedor-productos {
+	display: flex;
+}
