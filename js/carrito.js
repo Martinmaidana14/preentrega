@@ -14,15 +14,15 @@ const pedirProducto = () => {
 
 	// Mostrar el listado en un prompt
 	const seleccion = prompt(`Selecciona un producto:\n${opciones}`);
-	let productoElegido = productos.find((producto) => producto.nombre === seleccion);
-
+	let productoElegido = productos.find((producto) => producto.id === seleccion);
+	
 	while (!productoElegido) {
 		alert("Producto no encontrado.");
 		seleccion = prompt(`Selecciona un producto:\n${opciones}`);
 		nombreDelProducto = prompt("¿Qué producto desea agregar?");
-		productoElegido = productos.find((producto) => producto.nombre === nombreDelProducto);
+		productoElegido = productos.find((producto) => producto.id === nombreDelProducto);
 	}
-	alert(`El producto '${productoElegido.nombre}' tiene un costo de $${productoElegido.precio}`);
+	alert(`El producto '${productoElegido.id}' tiene un costo de $${productoElegido.precio}`);
 	return productoElegido;
 };
 
@@ -30,7 +30,7 @@ const pedirProducto = () => {
 const mostrarCarrito = () => {
 	let mensaje = "";
 	carrito.forEach((producto) => {
-		mensaje += `Producto: ${producto.nombre} -------------- $${producto.precio}\n`;
+		mensaje += `Producto: ${producto.id} -------------- $${producto.precio}\n`;
 	});
 	mensaje += `Total: $${total}`;
 	alert(mensaje);
