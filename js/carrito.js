@@ -72,7 +72,7 @@ function renderizarCarrito() {
 								`;
 		carritoElement.appendChild(itemCarrito);
 	});
-	//Botones de eliminar
+	//Configuracion de eliminar
 	const btnEliminar = carritoElement.querySelectorAll('.btn-eliminar'); //Nodelist[]
 	btnEliminar.forEach(el => {
 		el.addEventListener('click', (e) =>{ //Agregar Evento
@@ -82,6 +82,19 @@ function renderizarCarrito() {
 		});
 	});
 }
+	//Funcion de eliminar
+function eliminarProductoDelCarrito(id){
+	const index = carrito.findIndex(prod => prod.id === parseInt(id));
+
+	if(index !== -1){
+		carrito.slice(index, 1);
+		console.log("Producto eliminar del carrito.");
+	}else {
+		console.log("No se encontro el producto en el carrito.");
+	}
+}
+renderizarCarrito()
+
 
 
 
