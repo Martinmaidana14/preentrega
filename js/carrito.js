@@ -1,34 +1,11 @@
-class Persona {
-	constructor(nombre, apellido) {
-		this.nombre = nombre;
-	
-		this.apellido = apellido;
-	}
-	//metodo estatico para reutilizar constructor, truquito doble constructor
-	static nuevaPersona(objeto) {
-		return new Persona(objeto.nombre, objeto.apellido);
-	}
-	//recuperar estructura de la clase 
-	mostrar_nombre_completo() {
-		return this.nombre + " " + this.apellido;
-	}
-	}
-	
-	let nombre = prompt("ingrese su nombre");
-	
-	let apellido = prompt("ingrese su apellido");
-	
-	//localStorage.setItem("nombre-completo",nombre + " " + apellido);
-	
-	let persona = new Persona(nombre, apellido);
-	
-	localStorage.setItem("persona", JSON.stringify(persona));
-	
-	let objeto_persona = JSON.parse(localStorage.getItem("persona"));
-	
-	let p = Persona.nuevaPersona(objeto_persona);
-	
-	alert("Bienvenid@ " + p.mostrar_nombre_completo());
+let miFormulario = document.getElementById("formulario");
+miFormulario.addEventListener("submit", validarFormulario);
+
+function validarFormulario(e){
+    e.preventDefault();
+    console.log("Formulario Enviado");    
+}
+
 
 const contenedorProductos = document.querySelector('#contenedor-productos');
 console.log(productos)
@@ -42,7 +19,7 @@ const mostrarProductos = (data) => {
 								<div class="prod-description">
 									<h5 class="cel-nombre">${producto?.nombre}</h5>
 									<h5 class="cel-marca">${producto?.marca}</h5>
-									<button id='${producto.id}' class"btn-compra">COMPRAR</button>
+									<button id='${producto.id}' class="btn-compra">COMPRAR</button>
 								</div>
 								`;
 		contenedorProductos.appendChild(cardProducto);
@@ -60,14 +37,50 @@ mostrarProductos(productos);
 const carrito = [];
 
 function agregarAlCarrito(id){
-	//console.log(id)
-	carrito.some()
+	//Comprabar si existe
+	let enCarrito = carrito.find(prod => prod.id === parseInt(id))
 
 	let prodEncontrado = productos.find( prod => prod.id === parseInt(id)); //para encontrar un producto, recorriendo array 
 	//console.log(prodEncontrado) me devuelve el producto que clickeo y asi poder encontrarlos 
+	//Si existe se aumenta, else le agregamos con cantidad 1
+	if(enCarrito){
+		enCarrito.cantidad ++
+	}else {
+		prodEncontrado.cantidad = 1
+		carrito.push(prodEncontrado)
+	}
 
-	carrito.push(prodEncontrado);
 	console.log(carrito);
+	renderizarCarrito();
+}
+
+//Funcion para renderizar el carrito en el elemento con id "carrito"
+function renderizarCarrito() {
+	const carritoElement = document.getElementById('carrito');
+	carritoElement.innerHTML = ''; //Limpiar el contenido previo del carrito
+
+	if(carrito.length === 0) {
+	carritoElement.innerHTML = '<p>El carrito está vacio.</p>'
+	return
+	}
+	carrito.forEach(producto => {
+		const itemCarrito = document.createElement('div');
+		itemCarrito.classList.add('carrito-item');
+		itemCarrito.innerHTML = `
+								<div>${producto.nombre} - Cantidad: ${producto.cantidad}</div>
+								<button class="btn-eliminar" data-id="${producto.id}">Eliminar</button>
+								`;
+		carritoElement.appendChild(itemCarrito);
+	});
+	//Botones de eliminar
+	const btnEliminar = carritoElement.querySelectorAll('.btn-eliminar'); //Nodelist[]
+	btnEliminar.forEach(el => {
+		el.addEventListener('click', (e) =>{ //Agregar Evento
+			const productId = e.target.getAttribute('data-id');
+			eliminarProductoDelCarrito(productId);
+			renderizarCarrito();
+		});
+	});
 }
 
 
