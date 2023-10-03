@@ -1,3 +1,35 @@
+class Persona {
+	constructor(nombre, apellido) {
+		this.nombre = nombre;
+	
+		this.apellido = apellido;
+	}
+	
+	static nuevaPersona(objeto) {
+		return new Persona(objeto.nombre, objeto.apellido);
+	}
+	
+	mostrar_nombre_completo() {
+		return this.nombre + " " + this.apellido;
+	}
+	}
+	
+	let nombre = prompt("ingrese su nombre");
+	
+	let apellido = prompt("ingrese su apellido");
+	
+	//localStorage.setItem("nombre-completo",nombre + " " + apellido);
+	
+	let persona = new Persona(nombre, apellido);
+	
+	localStorage.setItem("persona", JSON.stringify(persona));
+	
+	let objeto_persona = JSON.parse(localStorage.getItem("persona"));
+	
+	let p = Persona.nuevaPersona(objeto_persona);
+	
+	alert("Bienvenid@ " + p.mostrar_nombre_completo());
+
 const contenedorProductos = document.querySelector('#contenedor-productos');
 console.log(productos)
 
