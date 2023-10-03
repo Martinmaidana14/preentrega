@@ -49,7 +49,6 @@ function agregarAlCarrito(id){
 		prodEncontrado.cantidad = 1
 		carrito.push(prodEncontrado)
 	}
-
 	console.log(carrito);
 	renderizarCarrito();
 }
@@ -60,8 +59,8 @@ function renderizarCarrito() {
 	carritoElement.innerHTML = ''; //Limpiar el contenido previo del carrito
 
 	if(carrito.length === 0) {
-	carritoElement.innerHTML = '<p>El carrito está vacio.</p>'
-	return
+		carritoElement.innerHTML = '<p>El carrito está vacio.</p>'
+		return
 	}
 	carrito.forEach(producto => {
 		const itemCarrito = document.createElement('div');
@@ -72,13 +71,13 @@ function renderizarCarrito() {
 								`;
 		carritoElement.appendChild(itemCarrito);
 	});
-	//Configuracion de eliminar
+	//Configuracion de los botones eliminar
 	const btnEliminar = carritoElement.querySelectorAll('.btn-eliminar'); //Nodelist[]
 	btnEliminar.forEach(el => {
 		el.addEventListener('click', (e) =>{ //Agregar Evento
 			const productId = e.target.getAttribute('data-id');
 			eliminarProductoDelCarrito(productId);
-			renderizarCarrito();
+			renderizarCarrito(); //Volver a renderizar el carrito despues de eliminar un producto
 		});
 	});
 }
@@ -87,8 +86,8 @@ function eliminarProductoDelCarrito(id){
 	const index = carrito.findIndex(prod => prod.id === parseInt(id));
 
 	if(index !== -1){
-		carrito.slice(index, 1);
-		console.log("Producto eliminar del carrito.");
+		carrito.splice(index, 1);
+		console.log("Producto eliminado del carrito.");
 	}else {
 		console.log("No se encontro el producto en el carrito.");
 	}
