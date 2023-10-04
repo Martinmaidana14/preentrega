@@ -94,9 +94,16 @@ function eliminarProductoDelCarrito(id){
 }
 renderizarCarrito()
 
+//Guardar informacion
 
+localStorage.setItem('celular', id);
 
-
+//Ciclo para recorrer las claves almacenadas en el objeto localStorage
+for (let i = 0; i < localStorage.length; i++) {
+    let celular = localStorage.key(i);
+    console.log("Celular: "+ celular);
+    console.log("Id: "+ localStorage.getItem(celular));
+}
 
 
 
