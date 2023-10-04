@@ -34,7 +34,7 @@ const mostrarProductos = (data) => {
 }
 
 mostrarProductos(productos);
-
+//Operador OR reduce y evalua si cumple ciertos datos
 const carrito = JSON.parse(localStorage.getItem("carrito")) || []
 
 function agregarAlCarrito(id){
