@@ -4,6 +4,7 @@ miFormulario.addEventListener("submit", validarFormulario);
 function validarFormulario(e){
     e.preventDefault();
     console.log("Formulario Enviado");    
+
 }
 
 
@@ -34,7 +35,7 @@ const mostrarProductos = (data) => {
 
 mostrarProductos(productos);
 
-const carrito = [];
+const carrito = JSON.parse(localStorage.getItem("carrito")) || []
 
 function agregarAlCarrito(id){
 	//Comprabar si existe
@@ -48,6 +49,7 @@ function agregarAlCarrito(id){
 	}else {
 		prodEncontrado.cantidad = 1
 		carrito.push(prodEncontrado)
+		localStorage.setItem("carrito", JSON.stringify(carrito))
 	}
 	console.log(carrito);
 	renderizarCarrito();
@@ -84,33 +86,16 @@ function renderizarCarrito() {
 	//Funcion de eliminar
 function eliminarProductoDelCarrito(id){
 	const index = carrito.findIndex(prod => prod.id === parseInt(id));
-
+	localStorage.setItem("carrito", JSON.stringify(carrito))
 	if(index !== -1){
 		carrito.splice(index, 1);
 		console.log("Producto eliminado del carrito.");
+
 	}else {
 		console.log("No se encontro el producto en el carrito.");
 	}
 }
 renderizarCarrito()
-
-//Guardar informacion
-
-localStorage.setItem('celular', id);
-
-//Ciclo para recorrer las claves almacenadas en el objeto localStorage
-for (let i = 0; i < localStorage.length; i++) {
-    let celular = localStorage.key(i);
-    console.log("Celular: "+ celular);
-    console.log("Id: "+ localStorage.getItem(celular));
-}
-
-
-
-
-
-
-
 
 
 
