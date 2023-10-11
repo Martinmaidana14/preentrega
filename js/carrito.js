@@ -27,7 +27,6 @@ function validarFormulario(e){
 
 
 const contenedorProductos = document.querySelector('#contenedor-productos');
-console.log(productos)
 
 const mostrarProductos = (data) => {
 	data.forEach(producto =>{
@@ -69,7 +68,6 @@ function agregarAlCarrito(id){
 		carrito.push(prodEncontrado)
 		localStorage.setItem("carrito", JSON.stringify(carrito))
 	}
-	console.log(carrito);
 	renderizarCarrito();
 }
 
