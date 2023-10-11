@@ -1,9 +1,27 @@
+
+
 let miFormulario = document.getElementById("formulario");
 miFormulario.addEventListener("submit", validarFormulario);
 
 function validarFormulario(e){
+
+
     e.preventDefault();
-    console.log("Formulario Enviado");    
+    console.log("Formulario Enviado");
+
+
+	//Capturando inputs y value
+	let inputNombre = document.getElementById("nombre").value
+	let inputApellido = document.getElementById("apellido").value
+
+
+	const usuario = {
+		nombre: inputNombre,
+		apellido: inputApellido
+	}
+
+	localStorage.setItem("usuario", JSON.stringify(usuario))
+
 
 }
 

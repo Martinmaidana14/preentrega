@@ -43,6 +43,10 @@ img {
 	background-color: gray;
 }
 
-contenedor-productos {
+#contenedor-productos {
+	display: flex;
+}
+
+#carrito {
 	display: flex;
 }

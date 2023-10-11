@@ -1,7 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="">
+		<meta name="description" content=""> 
 		<title>Mi tienda online</title>
+		<!-- META DESCRIPRION -->
+		<link rel="shortcut icon" href="./img/S.R.Maidana.png">
+		<meta name="keywords"  content="SERVICE, MANTENIMIENTO, BOMBAS, REPARACION, SOLUCION, ELECTRO-MECANICO">
 		<!-- Bootstrap icons -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 		<!-- CSS Styles -->
@@ -9,9 +16,22 @@
 	</head>
 	<body>
 		<!-- Encabezado de la página -->
-		<header>
+		<header class="d-flex align-items-center justify-content-center border-bottom bg-white fixed-top">
 			<div>
 				<a href="./index.html" class="logo"><img class="logoTipo" src="./img/S.R.Maidana.png" alt="logoSrm"></a>
+			</div>
+			<div class="container d-flex align-items-center">
+
+				<div class="col-3 d-flex align-items-center justify-content-start">
+					<img src="./assets/img/logo_js.png" alt="" width="100" height="70" alt="">
+				</div>
+	
+				<div class="col-6 d-flex align-items-center justify-content-center">
+					<div class="header-buscador-marco">
+						<input type="text" name="buscar" id="buscar">
+						<i class="fa-solid fa-magnifying-glass"></i>
+					</div>
+				</div>
 			</div>
 		</header>
 		<!-- Contenido principal -->
@@ -21,7 +41,7 @@
 				<h2>Próximamente</h2>
 			</section>
 			<form id="formulario">
-				<input type="text", id="nombre">
+				<input type="text" id="nombre">
 				<input  type="text" id="apellido">
 				<input type="submit" value="Enviar">
 			</form>
@@ -30,7 +50,6 @@
 			<div id="carrito"></div>
 
 			<img src="https://dummyimage.com/300x150/f2f2f2/aaa" id="imgWithAtt" alt="Placeholder image" class="img gray" />
-			<script src="main.js"></script>
 		</main>
 		<footer>
 			<p>&copy; 2023 Mi Tienda Online</p>
