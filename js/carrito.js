@@ -28,6 +28,7 @@ function validarFormulario(e){
 
 const contenedorProductos = document.querySelector('#contenedor-productos');
 
+
 const mostrarProductos = (data) => {
 	data.forEach(producto =>{
 		const cardProducto = document.createElement('article');
@@ -98,13 +99,21 @@ function renderizarCarrito() {
 			renderizarCarrito(); //Volver a renderizar el carrito despues de eliminar un producto
 		});
 	});
+
+	//mostrar total del carrito
+	const totalCarrito = document.getElementById('total-carrito');
+	totalCarrito.innerHTML = `Total: $ ${calcularTotalCarrito()}`;
+	if (carrito.length === 0) {
+		totalCarrito.innerHTML = "Total: 0";
+	}
 }
-	//Funcion de eliminar
+
+//Funcion de eliminar
 function eliminarProductoDelCarrito(id){
 	const index = carrito.findIndex(prod => prod.id === parseInt(id));
-	localStorage.setItem("carrito", JSON.stringify(carrito))
 	if(index !== -1){
 		carrito.splice(index, 1);
+		localStorage.setItem("carrito", JSON.stringify(carrito));
 		console.log("Producto eliminado del carrito.");
 
 	}else {
@@ -113,6 +122,14 @@ function eliminarProductoDelCarrito(id){
 }
 renderizarCarrito()
 
+//Retornar total de carrito
+function calcularTotalCarrito() {
+	let total = 0;
+	carrito.forEach(producto => {
+		total += producto.precio * producto.cantidad;
+	})
+	return total
+}
 
 
 
