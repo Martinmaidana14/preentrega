@@ -29,7 +29,10 @@
 					</div>
 				</div>
 			</div>
-			<img id="iconoCarrito" src="./img/carritoCompra.png" id="imgCarrito" alt="carritoCompraImg" class="img gray" />
+			<div>
+				<img id="iconoCarrito" src="./img/carritoCompra.png" id="imgCarrito" alt="carritoCompraImg" class="img gray" />
+				<div id="numero"></div>
+			</div>
 
 		</header>
 		<!-- Contenido principal -->
@@ -49,11 +52,21 @@
 				<div id="carrito"></div>
 				<div id="total-carrito"></div>
 			</div>
+			<div id="contenedor" class="contenedor"></div>
 
 		</main>
 		<footer>
 			<p>&copy; 2023 Mi Tienda Online</p>
 		</footer>
+		<div id="contenedorCompra">
+			<div class="informacionCompra" id="informacionCompra">
+				<h2>Carro</h2>
+				<p class="x" id="x">x</p>
+			</div>
+			<div class="productosCompra" id="productosCompra"></div>
+			<div class="total" id="total"></div>
+			<button>Finalizar Compra</button>
+		</div>
 		<!-- Scripts -->
 		<script src="./js/productos.js"></script>
 		<script src="./js/carrito.js"></script>
