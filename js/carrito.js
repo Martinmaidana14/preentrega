@@ -34,7 +34,7 @@ const mostrarProductos = (data) => {
 		const cardProducto = document.createElement('article');
 		cardProducto.setAttribute('id', 'tarjeta-producto');
 		cardProducto.innerHTML =`
-								<img class="prod-img" src="${producto?.img}" alt="${producto?.nombre}" style="width: 75px"
+								<img class="prod-img" src="${producto?.img}" alt="${producto?.nombre}" style="width: 75px"</img>
 								<div class="prod-description">
 									<h5 class="cel-nombre">${producto?.nombre}</h5>
 									<h5 class="cel-marca">${producto?.marca}</h5>
@@ -79,12 +79,12 @@ function renderizarCarrito() {
 
 	if(carrito.length === 0) {
 		carritoElement.innerHTML = '<p>El carrito está vacio.</p>'
-		return
 	}
 	carrito.forEach(producto => {
 		const itemCarrito = document.createElement('div');
 		itemCarrito.classList.add('carrito-item');
 		itemCarrito.innerHTML = `
+								<img class="prod-img" src="${producto?.img}" alt="${producto?.nombre}" style="width: 75px"</img>
 								<div>${producto.nombre} - Cantidad: ${producto.cantidad}</div>
 								<button class="btn-eliminar" data-id="${producto.id}">Eliminar</button>
 								`;

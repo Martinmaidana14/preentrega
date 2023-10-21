@@ -25,6 +25,7 @@ const productos = [
 	},
 	{
 		id: 4,
+		img: "./img/galaxyA34.jpg",
 		nombre: "Galaxy A34",
 		marca: "Samsung",
 		precio: 190,
@@ -32,6 +33,7 @@ const productos = [
 	},
 	{
 		id: 5,
+		img: "./img/galaxyM23.jpg",
 		nombre: "Galaxy M23",
 		marca: "Samsung",
 		precio: 110,
@@ -39,6 +41,7 @@ const productos = [
 	},
 	{
 		id: 6,
+		img: "./img/galaxyS20fe.jpg",
 		nombre: "Galaxy S20Fe",
 		marca: "Samsung",
 		precio: 240,
@@ -46,6 +49,7 @@ const productos = [
 	},
 	{
 		id: 7,
+		img: "./img/galaxyTabS6.jpg",
 		nombre: "Galaxy Tab S6 lite",
 		marca: "Samsung",
 		precio: 300,
@@ -53,6 +57,7 @@ const productos = [
 	},
 	{
 		id: 8,
+		img: "./img/30Se.jpg",
 		nombre: "30 SE",
 		marca: "TCL",
 		precio: 95,

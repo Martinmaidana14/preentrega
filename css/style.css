@@ -50,3 +50,8 @@ img {
 #carrito {
 	display: flex;
 }
+
+.container-carrito {
+	display: none;
+}
+
