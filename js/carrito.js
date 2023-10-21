@@ -134,5 +134,5 @@ function calcularTotalCarrito() {
 
 const iconoCarrito = document.getElementById("iconoCarrito")
 iconoCarrito.addEventListener("click", () => {
-	con
+	console.log("Compra")
 })
