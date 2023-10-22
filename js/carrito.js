@@ -142,3 +142,28 @@ iconoCarrito.addEventListener("click", () => {
 fetch('./js/productos.json')
 .then( res => res.json())
 .then( data => mostrarProductos(data))
+
+const contenedorProd = document.querySelector('#container')
+
+function mostrarProductos(productos){
+
+
+	productos.forEach( prod => {
+		let card = document.createElement('div');
+
+		card.innerHTML = `<h2>$(prod.nombre)</p>
+						<img src="$(prod.img)"/>
+						<button class="btn-comprar" id="$(prod.id)"> Comprar </button>`
+
+		contenedorProd.appendChild(card);
+	})
+	const botonesComprar =document.querySelectorAll('.btn-comprar');
+	botonesComprar.forEach(btn => {
+		btn.addEventListener("click", (e)=> agregarAlCarrito(e, productos));
+	})
+}
+
+function agregarAlCarrito(e, prods){
+	console.log(prods);
+	console.log(e.target.id);
+}

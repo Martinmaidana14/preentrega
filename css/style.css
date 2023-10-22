@@ -7,7 +7,6 @@
 
 body {
     font-family: 'Space Grotesk', sans-serif;
-    background-color: #141C29;
 }
 
 header{
@@ -18,4 +17,9 @@ header{
 
 main {
 	display: flex;
+    background-color: aquamarine;
+}
+
+footer {
+    background-color: #151515;
 }
