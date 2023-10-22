@@ -38,7 +38,7 @@ const mostrarProductos = (data) => {
 								<div class="prod-description">
 									<h5 class="cel-nombre">${producto?.nombre}</h5>
 									<h5 class="cel-marca">${producto?.marca}</h5>
-									<button id='${producto.id}' class="btn-compra">COMPRAR</button>
+									<button id='${producto?.id}' class="btn-compra">COMPRAR</button>
 								</div>
 								`;
 		contenedorProductos.appendChild(cardProducto);
@@ -51,7 +51,6 @@ const mostrarProductos = (data) => {
 	});
 }
 
-mostrarProductos(productos);
 //Operador OR reduce y evalua si cumple ciertos datos
 const carrito = JSON.parse(localStorage.getItem("carrito")) || []
 
@@ -85,8 +84,8 @@ function renderizarCarrito() {
 		itemCarrito.classList.add('carrito-item');
 		itemCarrito.innerHTML = `
 								<img class="prod-img" src="${producto?.img}" alt="${producto?.nombre}" style="width: 75px"</img>
-								<div>${producto.nombre} - Cantidad: ${producto.cantidad}</div>
-								<button class="btn-eliminar" data-id="${producto.id}">Eliminar</button>
+								<div>${producto?.nombre} - Cantidad: ${producto?.cantidad}</div>
+								<button class="btn-eliminar" data-id="${producto?.id}">Eliminar</button>
 								`;
 		carritoElement.appendChild(itemCarrito);
 	});
@@ -134,5 +133,12 @@ function calcularTotalCarrito() {
 
 const iconoCarrito = document.getElementById("iconoCarrito")
 iconoCarrito.addEventListener("click", () => {
-	console.log("Compra")
+	renderizarCarrito()
 })
+
+
+
+//HACER FECH Y JSON(DE PRODUCTOS.JS)!!!!CLASE 15
+fetch('./js/producto.json')
+.then( res => res.json)
+.then( data => mostrarProductos(data))
