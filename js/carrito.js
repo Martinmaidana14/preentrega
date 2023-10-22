@@ -139,6 +139,6 @@ iconoCarrito.addEventListener("click", () => {
 
 
 //HACER FECH Y JSON(DE PRODUCTOS.JS)!!!!CLASE 15
-fetch('./js/producto.json')
-.then( res => res.json)
+fetch('./js/productos.json')
+.then( res => res.json())
 .then( data => mostrarProductos(data))
