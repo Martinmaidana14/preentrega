@@ -12,14 +12,17 @@
 		<!-- BOOTSTRAP -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 		<link rel="stylesheet" href="./css/style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.17/sweetalert2.min.css" integrity="sha512-CJ5goVzT/8VLx0FE2KJwDxA7C6gVMkIGKDx31a84D7P4V3lOVJlGUhC2mEqmMHOFotYv4O0nqAOD0sEzsaLMBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+		<!-- Toastify -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"> 
 	</head>
 	<body>
 		<!-- Encabezado de la página -->
-		<header class="d-flex align-items-center justify-content-center border-bottom bg-white fixed-top">
+		<header>
 			<div>
 				<a href="./index.html" class="logo"><img class="logoTipo" src="./img/S.R.Maidana.png" alt="logoSrm"></a>
 			</div>
-			<div class="container d-flex align-items-center">
+			<div class="header-acomodo">
 
 				<div class="col-12 d-flex align-items-center justify-content-center">
 					<div class="header-buscador-marco">
@@ -29,7 +32,7 @@
 				</div>
 			</div>
 			<div>
-				<img src="./img/carritoCompra.png" alt="carritoCompraImg">
+				<img class="imgcarrito" src="./img/carritoCompra.png" alt="carritoCompraImg">
 				<div id="numero"></div>
 			</div>
 
@@ -58,7 +61,7 @@
 
 		</main>
 		<footer>
-			<p>&copy; 2023 Mi Tienda Online</p>
+			<p class="copy">&copy; 2023 Mi Tienda Online</p>
 		</footer>
 		<!-- Scripts -->
 		<script src="./js/carrito.js"></script>

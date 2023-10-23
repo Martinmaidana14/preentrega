@@ -139,16 +139,18 @@ iconoCarrito.addEventListener("click", () => {
 
 
 //HACER FECH Y JSON(DE PRODUCTOS.JS)!!!!CLASE 15
-fetch('./js/productos.json')
-.then( res => res.json())
-.then( data => mostrarProductos(data))
-
 const contenedorProd = document.querySelector('#container')
+
+
+fetch('/productos.json')
+.then( res => res.json())
+.then( productos => console.log(productos))
+
 
 function mostrarProductos(productos){
 
 
-	productos.forEach( prod => {
+	productos.forEach(prod => {
 		let card = document.createElement('div');
 
 		card.innerHTML = `<h2>$(prod.nombre)</p>
@@ -167,3 +169,4 @@ function agregarAlCarrito(e, prods){
 	console.log(prods);
 	console.log(e.target.id);
 }
+
