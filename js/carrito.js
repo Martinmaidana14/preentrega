@@ -29,27 +29,7 @@ function validarFormulario(e){
 const contenedorProductos = document.querySelector('#contenedor-productos');
 
 
-const mostrarProductos = (data) => {
-	data.forEach(producto =>{
-		const cardProducto = document.createElement('article');
-		cardProducto.setAttribute('id', 'tarjeta-producto');
-		cardProducto.innerHTML =`
-								<img class="prod-img" src="${producto?.img}" alt="${producto?.nombre}" style="width: 75px"</img>
-								<div class="prod-description">
-									<h5 class="cel-nombre">${producto?.nombre}</h5>
-									<h5 class="cel-marca">${producto?.marca}</h5>
-									<button id='${producto?.id}' class="btn-compra">COMPRAR</button>
-								</div>
-								`;
-		contenedorProductos.appendChild(cardProducto);
-	})
-	const btnComprar = document.querySelectorAll('.btn-compra'); //Nodelist[]
-	btnComprar.forEach(el => {
-		el.addEventListener('click', (e) =>{ //Agregar Evento
-			agregarAlCarrito(e.target.id);
-		});
-	});
-}
+
 
 //Operador OR reduce y evalua si cumple ciertos datos
 const carrito = JSON.parse(localStorage.getItem("carrito")) || []
@@ -154,14 +134,19 @@ function mostrarProductos(productos){
 		let card = document.createElement('div');
 
 		card.innerHTML = `<h2>$(prod.nombre)</p>
-						<img src="$(prod.img)"/>
-						<button class="btn-comprar" id="$(prod.id)"> Comprar </button>`
+						<img class="prod-img" src="${producto?.img}" alt="${producto?.nombre}" style="width: 75px"</img>
+						<div class="prod-description">
+							<h5 class="cel-nombre">${producto?.nombre}</h5>
+							<h5 class="cel-marca">${producto?.marca}</h5>
+							<button id='${producto?.id}' class="btn-compra">COMPRAR</button>
+						</div>
+						`;
 
 		contenedorProd.appendChild(card);
 	})
-	const botonesComprar =document.querySelectorAll('.btn-comprar');
+	const botonesComprar =document.querySelectorAll('.btn-comprar'); //Nodelist
 	botonesComprar.forEach(btn => {
-		btn.addEventListener("click", (e)=> agregarAlCarrito(e, productos));
+		btn.addEventListener("click", (e)=> agregarAlCarrito(e, productos)); //Agregar Evento
 	})
 }
 
@@ -169,4 +154,10 @@ function agregarAlCarrito(e, prods){
 	console.log(prods);
 	console.log(e.target.id);
 }
+
+
+
+
+
+
 
