@@ -19,23 +19,21 @@
 	<body>
 		<!-- Encabezado de la página -->
 		<header>
-			<div>
-				<a href="./index.html" class="logo"><img class="logoTipo" src="./img/S.R.Maidana.png" alt="logoSrm"></a>
+			<div class="logo col-3">
+				<a href="./index.html"><img class="logoTipo" src="./img/S.R.Maidana.png" alt="logoSrm"></a>
 			</div>
-			<div class="header-acomodo">
-
-				<div class="col-12 d-flex align-items-center justify-content-center">
+			<div class="busqueda col-6">
+				<div>
 					<div class="header-buscador-marco">
 						<input type="text" name="buscar" id="buscar">
 						<i class="fa-solid fa-magnifying-glass"></i>
 					</div>
 				</div>
 			</div>
-			<div>
-				<img class="imgcarrito" src="./img/carritoCompra.png" alt="carritoCompraImg">
+			<div class="imgCarro col-3">
+				<img id="iconoCarrito" class="imgcarrito" src="./img/carritoCompra.png" alt="carritoCompraImg">
 				<div id="numero"></div>
 			</div>
-
 		</header>
 		<!-- Contenido principal -->
 		<main>
@@ -51,8 +49,6 @@
 
 			<div id="container"></div>
 
-
-			<div id="contenedor-productos"></div>
 			<div class="container-carrito">
 				<div id="carrito"></div>
 				<div id="total-carrito"></div>
@@ -65,6 +61,5 @@
 		</footer>
 		<!-- Scripts -->
 		<script src="./js/carrito.js"></script>
-		<!-- <script src="./js/opcion2.js"></script> -->
 	</body>
 </html>

@@ -2,7 +2,7 @@
 
 let miFormulario = document.getElementById("formulario");
 miFormulario.addEventListener("submit", validarFormulario);
-
+const carrito = JSON.parse(localStorage.getItem("carrito")) || []
 function validarFormulario(e){
 
 
@@ -21,35 +21,8 @@ function validarFormulario(e){
 	}
 
 	localStorage.setItem("usuario", JSON.stringify(usuario))
-
-
 }
 
-
-const contenedorProductos = document.querySelector('#contenedor-productos');
-
-
-
-
-//Operador OR reduce y evalua si cumple ciertos datos
-const carrito = JSON.parse(localStorage.getItem("carrito")) || []
-
-function agregarAlCarrito(id){
-	//Comprabar si existe
-	let enCarrito = carrito.find(prod => prod.id === parseInt(id))
-
-	let prodEncontrado = productos.find( prod => prod.id === parseInt(id)); //para encontrar un producto, recorriendo array 
-	//console.log(prodEncontrado) me devuelve el producto que clickeo y asi poder encontrarlos 
-	//Si existe se aumenta, else le agregamos con cantidad 1
-	if(enCarrito){
-		enCarrito.cantidad ++
-	}else {
-		prodEncontrado.cantidad = 1
-		carrito.push(prodEncontrado)
-		localStorage.setItem("carrito", JSON.stringify(carrito))
-	}
-	renderizarCarrito();
-}
 
 //Funcion para renderizar el carrito en el elemento con id "carrito"
 function renderizarCarrito() {
@@ -99,7 +72,6 @@ function eliminarProductoDelCarrito(id){
 		console.log("No se encontro el producto en el carrito.");
 	}
 }
-renderizarCarrito()
 
 //Retornar total de carrito
 function calcularTotalCarrito() {
@@ -122,18 +94,18 @@ iconoCarrito.addEventListener("click", () => {
 const contenedorProd = document.querySelector('#container')
 
 
-fetch('/productos.json')
+fetch('./js/productos.json')
 .then( res => res.json())
-.then( productos => console.log(productos))
+.then( productos => mostrarProductos(productos))
 
 
 function mostrarProductos(productos){
 
 
-	productos.forEach(prod => {
-		let card = document.createElement('div');
+	productos.forEach(producto => {
+		let card = document.createElement('div'); 
 
-		card.innerHTML = `<h2>$(prod.nombre)</p>
+		card.innerHTML = `<h2>${producto.nombre}</p>
 						<img class="prod-img" src="${producto?.img}" alt="${producto?.nombre}" style="width: 75px"</img>
 						<div class="prod-description">
 							<h5 class="cel-nombre">${producto?.nombre}</h5>
@@ -143,19 +115,31 @@ function mostrarProductos(productos){
 						`;
 
 		contenedorProd.appendChild(card);
-	})
-	const botonesComprar =document.querySelectorAll('.btn-comprar'); //Nodelist
-	botonesComprar.forEach(btn => {
-		btn.addEventListener("click", (e)=> agregarAlCarrito(e, productos)); //Agregar Evento
+
+		const btnComprar = document.getElementById(producto.id)
+		btnComprar.addEventListener("click", ()=> agregarAlCarrito(producto.id,productos)); 
 	})
 }
 
-function agregarAlCarrito(e, prods){
-	console.log(prods);
-	console.log(e.target.id);
+//Operador OR reduce y evalua si cumple ciertos datos
+
+function agregarAlCarrito(id,productos){
+	//Comprabar si existe
+	let enCarrito = carrito.find(prod => prod.id === parseInt(id))
+
+	let prodEncontrado = productos.find( prod => prod.id === parseInt(id)); //para encontrar un producto, recorriendo array 
+	//console.log(prodEncontrado) me devuelve el producto que clickeo y asi poder encontrarlos 
+	//Si existe se aumenta, else le agregamos con cantidad 1
+	if(enCarrito){
+		enCarrito.cantidad ++
+	}else {
+		prodEncontrado.cantidad = 1
+		carrito.push(prodEncontrado)
+		console.log(carrito)
+		localStorage.setItem("carrito", JSON.stringify(carrito))
+	}
+	// renderizarCarrito();
 }
-
-
 
 
 
