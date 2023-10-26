@@ -1,65 +1,93 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="">
-		<meta name="description" content=""> 
-		<title>Mi tienda online</title>
-		<!-- META DESCRIPRION -->
-		<link rel="shortcut icon" href="./img/S.R.Maidana.png">
-		<meta name="keywords"  content="SERVICE, VENTA, CELULARES, SAMSUNG, MOTOROLA">
-		<!-- BOOTSTRAP -->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-		<link rel="stylesheet" href="./css/style.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.17/sweetalert2.min.css" integrity="sha512-CJ5goVzT/8VLx0FE2KJwDxA7C6gVMkIGKDx31a84D7P4V3lOVJlGUhC2mEqmMHOFotYv4O0nqAOD0sEzsaLMBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
-		<!-- Toastify -->
-		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"> 
-	</head>
-	<body>
-		<!-- Encabezado de la página -->
-		<header>
-			<div class="logo col-3">
-				<a href="./index.html"><img class="logoTipo" src="./img/S.R.Maidana.png" alt="logoSrm"></a>
-			</div>
-			<div class="busqueda col-6">
-				<div>
-					<div class="header-buscador-marco">
-						<input type="text" name="buscar" id="buscar">
-						<i class="fa-solid fa-magnifying-glass"></i>
-					</div>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="">
+	<meta name="description" content="">
+	<title>Mi tienda online</title>
+	<!-- META DESCRIPRION -->
+	<link rel="shortcut icon" href="./img/S.R.Maidana.png">
+	<meta name="keywords" content="SERVICE, VENTA, CELULARES, SAMSUNG, MOTOROLA">
+	<!-- BOOTSTRAP -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.17/sweetalert2.min.css"
+		integrity="sha512-CJ5goVzT/8VLx0FE2KJwDxA7C6gVMkIGKDx31a84D7P4V3lOVJlGUhC2mEqmMHOFotYv4O0nqAOD0sEzsaLMBg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- Toastify -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
+<body>
+	<!-- Encabezado de la página -->
+	<header>
+		<div class="logo col-3">
+			<a href="./index.html"><img class="logoTipo" src="./img/S.R.Maidana.png" alt="logoSrm"></a>
+		</div>
+		<div class="busqueda col-6">
+			<div>
+				<div class="header-buscador-marco">
+					<input type="text" name="buscar" id="buscar">
+					<i class="fa-solid fa-magnifying-glass"></i>
 				</div>
 			</div>
-			<div class="imgCarro col-3">
-				<img id="iconoCarrito" class="imgcarrito" src="./img/carritoCompra.png" alt="carritoCompraImg">
-				<div id="numero"></div>
+		</div>
+		<div class="imgCarro col-3">
+			<img id="iconoCarrito" class="imgcarrito" src="./img/carritoCompra.png" alt="carritoCompraImg"
+				data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+			<div id="numero"></div>
+		</div>
+
+
+	</header>
+	<!-- Contenido principal -->
+	<main>
+		<h1>Bienvenidos a mi tienda online</h1>
+		<section>
+			<h2>Próximamente</h2>
+		</section>
+		<form id="formulario">
+			<input type="text" id="nombre">
+			<input type="text" id="apellido">
+			<input type="submit" value="Enviar">
+		</form>
+
+		<div id="container" class="container mt-3 d-flex gap-3 flex-column"></div>
+		<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+			aria-labelledby="offcanvasExampleLabel">
+			<div class="offcanvas-header">
+				<h5 class="offcanvas-title" id="offcanvasExampleLabel">Mi Carrito</h5>
+				<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+					aria-label="Close"></button>
 			</div>
-		</header>
-		<!-- Contenido principal -->
-		<main>
-			<h1>Bienvenidos a mi tienda online</h1>
-			<section>
-				<h2>Próximamente</h2>
-			</section>
-			<form id="formulario">
-				<input type="text" id="nombre">
-				<input  type="text" id="apellido">
-				<input type="submit" value="Enviar">
-			</form>
-
-			<div id="container"></div>
-
-			<div class="container-carrito">
-				<div id="carrito"></div>
-				<div id="total-carrito"></div>
+			<div class="offcanvas-body container-carrito" id="carrito"></div>
+			<div id="total-carrito" class="total-carrito"></div>
+			<div class="botones">
+				<button id="vaciar-carrito" class="vaciar-carrito">Vaciar Carrito</button>
+				<button class="confirmar-compra" data-bs-dismiss="offcanvas" aria-label="Close"><a
+						id="confirmar-compra">Confrimar Compra</a></button>
 			</div>
-			<div id="contenedor" class="contenedor"></div>
+		</div>
 
-		</main>
-		<footer>
-			<p class="copy">&copy; 2023 Mi Tienda Online</p>
-		</footer>
-		<!-- Scripts -->
-		<script src="./js/carrito.js"></script>
-	</body>
+		<div id="contenedor" class="contenedor"></div>
+
+	</main>
+	<footer>
+		<p class="copy">&copy; 2023 Mi Tienda Online</p>
+	</footer>
+	<!-- Scripts -->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+	integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+    </script>
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="./js/carrito.js"></script>
+</body>
+
 </html>

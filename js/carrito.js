@@ -1,13 +1,12 @@
-
-
 let miFormulario = document.getElementById("formulario");
 miFormulario.addEventListener("submit", validarFormulario);
 const carrito = JSON.parse(localStorage.getItem("carrito")) || []
-function validarFormulario(e){
+
+function validarFormulario(e) {
 
 
-    e.preventDefault();
-    console.log("Formulario Enviado");
+	e.preventDefault();
+	console.log("Formulario Enviado");
 
 
 	//Capturando inputs y value
@@ -29,28 +28,34 @@ function renderizarCarrito() {
 	const carritoElement = document.getElementById('carrito');
 	carritoElement.innerHTML = ''; //Limpiar el contenido previo del carrito
 
-	if(carrito.length === 0) {
+	if (carrito.length === 0) {
 		carritoElement.innerHTML = '<p>El carrito está vacio.</p>'
 	}
 	carrito.forEach(producto => {
 		const itemCarrito = document.createElement('div');
-		itemCarrito.classList.add('carrito-item');
-		itemCarrito.innerHTML = `
-								<img class="prod-img" src="${producto?.img}" alt="${producto?.nombre}" style="width: 75px"</img>
-								<div>${producto?.nombre} - Cantidad: ${producto?.cantidad}</div>
-								<button class="btn-eliminar" data-id="${producto?.id}">Eliminar</button>
-								`;
+		itemCarrito.classList.add('carrito-item', 'border', 'rounded', 'mt-3')
+		itemCarrito.innerHTML = `<div class="card-body">
+		<img src="${producto.img}" alt="${producto.nombre}" style="width: 75px;" class="prod-img">
+		<h5 class="card-title">${producto.nombre} - Cantidad: ${producto.cantidad}</h5>
+<button class="btn btn-danger btn-eliminar" data-id="${producto.id}">Eliminar</button>
+	</div>`
+
+
+
 		carritoElement.appendChild(itemCarrito);
 	});
 	//Configuracion de los botones eliminar
-	const btnEliminar = carritoElement.querySelectorAll('.btn-eliminar'); //Nodelist[]
+	// Configuración de los botones eliminar
+	const btnEliminar = carritoElement.querySelectorAll('.btn-eliminar'); // Nodelist[]
 	btnEliminar.forEach(el => {
-		el.addEventListener('click', (e) =>{ //Agregar Evento
+		el.addEventListener('click', (e) => {
 			const productId = e.target.getAttribute('data-id');
+			console.log(productId)
 			eliminarProductoDelCarrito(productId);
-			renderizarCarrito(); //Volver a renderizar el carrito despues de eliminar un producto
+			renderizarCarrito();
 		});
 	});
+
 
 	//mostrar total del carrito
 	const totalCarrito = document.getElementById('total-carrito');
@@ -61,14 +66,14 @@ function renderizarCarrito() {
 }
 
 //Funcion de eliminar
-function eliminarProductoDelCarrito(id){
+function eliminarProductoDelCarrito(id) {
 	const index = carrito.findIndex(prod => prod.id === parseInt(id));
-	if(index !== -1){
+	if (index !== -1) {
 		carrito.splice(index, 1);
 		localStorage.setItem("carrito", JSON.stringify(carrito));
 		console.log("Producto eliminado del carrito.");
-
-	}else {
+		mostrarAlertaSuccess("Producto eliminado del carrito");
+	} else {
 		console.log("No se encontro el producto en el carrito.");
 	}
 }
@@ -95,53 +100,96 @@ const contenedorProd = document.querySelector('#container')
 
 
 fetch('./js/productos.json')
-.then( res => res.json())
-.then( productos => mostrarProductos(productos))
+	.then(res => res.json())
+	.then(productos =>
+		mostrarProductos(productos),
+
+	)
 
 
-function mostrarProductos(productos){
-
-
+function mostrarProductos(productos) {
+	buscador(productos)
+	contenedorProd.innerHTML = ""
 	productos.forEach(producto => {
-		let card = document.createElement('div'); 
-
-		card.innerHTML = `<h2>${producto.nombre}</p>
-						<img class="prod-img" src="${producto?.img}" alt="${producto?.nombre}" style="width: 75px"</img>
-						<div class="prod-description">
-							<h5 class="cel-nombre">${producto?.nombre}</h5>
-							<h5 class="cel-marca">${producto?.marca}</h5>
-							<button id='${producto?.id}' class="btn-compra">COMPRAR</button>
-						</div>
+		const {
+			id,
+			nombre,
+			precio,
+			img,
+			cantidad,
+			descripcion
+		} = producto
+		let card = document.createElement('div');
+		card.classList.add('card', 'border', 'rounded', 'mt-3', 'd-flex', 'flex-row', 'p-3', 'col-12', 'justify-content-evenly')
+		card.innerHTML = `
+		
+		<div class="w-20">
+			<img src="${img}" alt="${nombre}" class="card-img-top" style="width: 150px;">
+  			</div>
+  			<div class="p-3 d-flex flex-column w-60 h-150">
+    <h5 class="card-title">${nombre}</h5>
+    <p class="card-text">${descripcion.substring(0, 120)}</p>
+  </div>
+  <div class="text-center">
+    <p class="card-text precio">$${precio}</p>
+    <button id="${id}" class="btn btn-primary btn-compra">COMPRAR</button>
+	</div>
+</div>
 						`;
 
 		contenedorProd.appendChild(card);
 
-		const btnComprar = document.getElementById(producto.id)
-		btnComprar.addEventListener("click", ()=> agregarAlCarrito(producto.id,productos)); 
+		const btnComprar = document.getElementById(id)
+		btnComprar.addEventListener("click", () => agregarAlCarrito(id, productos));
 	})
-}
+} {
 
-//Operador OR reduce y evalua si cumple ciertos datos
+	//Operador OR reduce y evalua si cumple ciertos datos
 
-function agregarAlCarrito(id,productos){
-	//Comprabar si existe
-	let enCarrito = carrito.find(prod => prod.id === parseInt(id))
+	function agregarAlCarrito(id, productos) {
+		//Comprabar si existe
+		let enCarrito = carrito.find(prod => prod.id === parseInt(id))
 
-	let prodEncontrado = productos.find( prod => prod.id === parseInt(id)); //para encontrar un producto, recorriendo array 
-	//console.log(prodEncontrado) me devuelve el producto que clickeo y asi poder encontrarlos 
-	//Si existe se aumenta, else le agregamos con cantidad 1
-	if(enCarrito){
-		enCarrito.cantidad ++
-	}else {
-		prodEncontrado.cantidad = 1
-		carrito.push(prodEncontrado)
-		console.log(carrito)
-		localStorage.setItem("carrito", JSON.stringify(carrito))
+		let prodEncontrado = productos.find(prod => prod.id === parseInt(id)); //para encontrar un producto, recorriendo array 
+		//console.log(prodEncontrado) me devuelve el producto que clickeo y asi poder encontrarlos 
+		//Si existe se aumenta, else le agregamos con cantidad 1
+		if (enCarrito) {
+			enCarrito.cantidad++
+		} else {
+			prodEncontrado.cantidad = 1
+			carrito.push(prodEncontrado)
+			console.log(carrito)
+			localStorage.setItem("carrito", JSON.stringify(carrito))
+			mostrarAlertaSuccess("Producto agregado al carrito");
+
+		}
+		renderizarCarrito()
 	}
-	// renderizarCarrito();
+
+
+
+	function mostrarAlertaSuccess(mensaje) {
+		Swal.fire({
+			icon: 'success',
+			title: 'Éxito',
+			text: mensaje,
+			timer: 1500, // Cambia el tiempo que deseas que aparezca la alerta (en milisegundos)
+			showConfirmButton: false,
+		});
+	}
 }
 
+renderizarCarrito()
 
 
+const buscador = (productos) => {
+	let inputTexto = document.getElementById("buscar");
+	inputTexto.addEventListener("input", () => {
+		let buscador = inputTexto.value.trim(); // Trim para eliminar espacios en blanco al principio y al final
+		let filtrados = productos.filter((producto) =>
+			producto.marca.toUpperCase().includes(buscador.toUpperCase())
+		);
+		mostrarProductos(filtrados);
 
-
+	});
+}
