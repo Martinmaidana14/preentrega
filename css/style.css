@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Ubuntu:ital@1&display=swap');
 
+
 *{
     font-family: "Lato" , sans-serif;
     font-family: "Ubuntu" , sans-serif;
@@ -11,13 +12,22 @@ body {
 
 header{
     display: flex;
-    background-color: rgba(20, 88, 260, 0.800);
+    width: 100%;
+    height: 100px;
 }
 
+
+
 .busqueda {
-    display: flex;
-    justify-content: center;
-    align-self: center;
+    float: none;
+    width: 100%;
+    max-width: 453px;
+    margin-bottom: 25px;
+    margin-top: 29px;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    text-align: left;
 }
 
 
@@ -47,16 +57,17 @@ header{
     display: flex;
     justify-content: center;
     align-self: center;
+    width: 200px;
 }
 
 .logoTipo {
-    width: 250px;
-    height: 100px;
+    width: 200px;
+    height: 80px;
 }
 
 
 .imgcarrito {
-    height: 50px;
+    height: 40px;
 }
 
 main {
@@ -64,20 +75,74 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    background-color: rgba(58, 124, 255, 0.804);
+    background-color: #4c4747;
+}
+
+h1 {
+    margin-top: 20px;
 }
 
 
+/* Footer */
 footer {
+    background-color: #733635;
+    height: 200px;
     display: flex;
-    background-color: #4c4747;
+    align-items: center;
     justify-content: center;
 }
 
-.copy {
+
+.nav-redes {
     display: flex;
-    color: rgba(58, 124, 255, 0.804);
+    color: whitesmoke;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    /*Estilos para los enlaces*/
 }
+
+footer .nav-redes a {
+    color: white; /* Cambia el color normal del enlace aquí */
+    text-decoration: none; /* Quita la subrayado por defecto de los enlaces */
+}
+
+footer .nav-redes a:visited {
+    color: green; /* Cambia el color después de ser visitado */
+}
+
+footer .nav-redes a:active {
+    color: red; /* Cambia el color cuando se hace clic en el enlace */
+}
+
+footer .nav-redes a:hover {
+    color: orange; /* Cambia el color cuando el mouse está sobre el enlace */
+}
+
+footer .info {
+    display: flex;
+    color: whitesmoke;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+footer .copy {
+    display: flex;
+    color: whitesmoke;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.logoTipo {
+    background: rgb(182,0,0);
+    background: linear-gradient(90deg, rgba(182,0,0,1) 8%, rgba(36,0,0,1) 20%, rgba(121,9,9,1) 40%, rgba(121,9,9,1) 60%, rgba(36,0,0,1) 80%, rgba(182,0,0,1) 92%);
+}
+
 
 /* #container {
     display: flex;

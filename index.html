@@ -17,31 +17,31 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.17/sweetalert2.min.css"
 		integrity="sha512-CJ5goVzT/8VLx0FE2KJwDxA7C6gVMkIGKDx31a84D7P4V3lOVJlGUhC2mEqmMHOFotYv4O0nqAOD0sEzsaLMBg=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<!-- Font Awesome 6.1.1 -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 	<!-- Toastify -->
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body>
 	<!-- Encabezado de la página -->
-	<header>
-		<div class="logo col-3">
-			<a href="./index.html"><img class="logoTipo" src="./img/S.R.Maidana.png" alt="logoSrm"></a>
-		</div>
-		<div class="busqueda col-6">
-			<div>
-				<div class="header-buscador-marco">
-					<input type="text" name="buscar" id="buscar">
-					<i class="fa-solid fa-magnifying-glass"></i>
-				</div>
+	<header class="d-flex align-items-center justify-content-center">
+		<div class="container-fluid row align-items-center justify-content-center">
+			<div class="logo col-3 d-flex align-items-center justify-content-end">
+				<a href="./index.html"><img class="logoTipo" src="./img/S.R.Maidana.png" alt="logoSrm"></a>
+			</div>
+			<div class="busqueda col-6">
+					<div class="header-buscador-marco align-items-center">
+						<input type="text" name="buscar" id="buscar">
+						<i class="fa-solid fa-magnifying-glass fa-beat" style="color: #800000;"></i>
+					</div>
+			</div>
+			<div class="imgCarro col-3 d-flex align-items-center justify-content-center">
+				<img id="iconoCarrito" class="imgcarrito" src="./img/carritoCompra.png" alt="carritoCompraImg"
+					data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+				<div id="numero"></div>
 			</div>
 		</div>
-		<div class="imgCarro col-3">
-			<img id="iconoCarrito" class="imgcarrito" src="./img/carritoCompra.png" alt="carritoCompraImg"
-				data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-			<div id="numero"></div>
-		</div>
-
-
 	</header>
 	<!-- Contenido principal -->
 	<main>
@@ -76,16 +76,37 @@
 
 	</main>
 	<footer>
-		<p class="copy">&copy; 2023 Mi Tienda Online</p>
+		<div class="container-fluid">
+
+			<div class="row">
+
+				<nav class="nav-redes col-4">
+
+					<a href="https://www.google.com" target="_blank"><img src="./assets/icons/google-icons.png" alt="google"></a>
+					<a href="https://www.instagram.com" target="_blank"><img src="./assets/icons/insta-icons.png" alt="instagram"></a>
+					<a href="https://www.facebook.com" target="_blank"><img src="./assets/icons/face-icons.png" alt="facebook"></a>
+					<div>
+						<a href="#header"><img src="./assets/icons/irarriba-50.png" alt="irainicio">Ir a Inicio</a>
+					</div>
+				</nav>
+				<section class="info col-4">
+					<p>terminos y condiciones</p>
+					<p>ayuda</p>
+					<p>accesibilidad</p>
+				</section>
+				<div class="copy col-4">
+					<p>Copyright © 2000-2023 S.R.M</p>
+				</div>
+			</div>
+		</div>
 	</footer>
 	<!-- Scripts -->
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
 	integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
-</script>
+	</script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
     </script>
-	</script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="./js/carrito.js"></script>
 </body>
